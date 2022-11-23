@@ -1,0 +1,418 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.22171185902047544 0.2881653662841288 0.9315602896452913 1.8978548903721684
+  position 16.683196628139584 4.466619208034391 20.98391681402589
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 1 0 0 1.5708
+  floorSize 10 10
+}
+DEF Supervisor Robot {
+  controller "openDoor"
+  supervisor TRUE
+}
+DEF DOOR1 Door {
+  translation -2.5 -4.25 0
+  rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+  name "door1"
+  size 1.5 2.4 0.2
+}
+DEF DOOR2 Door {
+  translation -1.125 2.75 0
+  rotation 1 0 0 1.5708
+  name "door2"
+  size 1.25 2.4 0.2
+}
+Wall {
+  translation -4 -2.75 1.23289e-06
+  rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+  size 2.5 2 0.1
+}
+Wall {
+  translation -3.25 -1.5 0
+  rotation 1 0 0 1.5708
+  name "wall(1)"
+  size 1.5 2 0.1
+}
+Wall {
+  translation -2.5 -2.5 0
+  rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+  name "wall(2)"
+  size 2 2 0.1
+}
+Wall {
+  translation -1 -3 0
+  rotation 1 0 0 1.5708
+  name "wall(4)"
+  size 3 2 0.1
+}
+Wall {
+  translation 0 -1.5 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(7)"
+  size 3 2 0.1
+}
+Wall {
+  translation 2 3.75 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(8)"
+  size 2 2 0.1
+}
+Wall {
+  translation 4 2.75 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(9)"
+  size 2 2 0.1
+}
+Wall {
+  translation 0.5 2.75 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(11)"
+  size 2 2 0.1
+}
+Wall {
+  translation 3 3.25 0
+  rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+  name "wall(12)"
+  size 1 2 0.1
+}
+Wall {
+  translation 2.5 1.25 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(13)"
+  size 2 2 0.1
+}
+Wall {
+  translation 1.5 -0.5 0
+  rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+  name "wall(14)"
+  size 6.5 2 0.1
+}
+Wall {
+  translation 2.5 -3.75 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(15)"
+  size 2 2 0.1
+}
+Wall {
+  translation 3.5 -2.75 0
+  rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+  name "wall(16)"
+  size 2 2 0.1
+}
+Wall {
+  translation 4 -0.25 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(21)"
+  size 2 2 0.1
+}
+Wall {
+  translation -2.25 0.5 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(22)"
+  size 3.5 2 0.1
+}
+Wall {
+  translation -1.75 3.5 0
+  rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+  name "wall(23)"
+  size 3 2 0.1
+}
+Wall {
+  translation -2.25 2 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(25)"
+  size 1 2 0.1
+}
+Wall {
+  translation -4 2.75 0
+  rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+  name "wall(26)"
+  size 2 2 0.1
+}
+Wall {
+  translation -4 3.75 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall(27)"
+  size 2 2 0.1
+}
+Wall {
+  translation -4 0 0
+  rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+  name "wall(29)"
+  size 1 2 0.1
+}
+Robot {
+  translation 4.21708 4.44063 0.0711836
+  rotation -5.327902403034233e-10 0.0003994685930356951 0.9999999202124185 3.141590000334342
+  scale 1.23715 1.23715 1.23715
+  children [
+    Lidar {
+      translation 1.77375e-09 -1.77373e-09 0.055
+      rotation -0.5773469358518515 -0.5773519358512958 0.5773519358512958 2.0944
+      children [
+        Transform {
+          rotation 1 0 0 1.5708
+          scale 0.5 0.5 0.5
+          children [
+            Shape {
+              appearance BlanketFabric {
+                colorOverride 0.959152 0.581765 0.109468
+                textureTransform TextureTransform {
+                  center 3 0
+                }
+                IBLStrength 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.05
+              }
+            }
+          ]
+        }
+      ]
+      rotationStep 0.161796
+      fieldOfView 3.14
+      verticalFieldOfView 0.1
+      numberOfLayers 1
+      near 0.025
+      minRange 0.05
+      maxRange 5
+      type "rotating"
+      defaultFrequency 50
+      maxFrequency 64
+    }
+    GPS {
+      translation 0 -0.05 0
+      name "gps_right"
+    }
+    GPS {
+      translation 0 0.05 0
+      name "gps_left"
+    }
+    GPS {
+      translation -0.09 0 0
+      name "gps_back"
+    }
+    GPS {
+      translation 0.09 0 0
+      name "gps_front"
+    }
+    GPS {
+      name "gps_mid"
+    }
+    Camera {
+      translation 0.109025 0.0399999 0.0163641
+      rotation -0.4469680445966859 0.4469680445966859 0.7748800773144385 -1.8231153071795863
+      children [
+        Transform {
+          translation 0 0 0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              geometry Cylinder {
+                height 0.03
+                radius 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "camera_left"
+      antiAliasing TRUE
+    }
+    Camera {
+      translation 0.109025 -0.0400001 0.0163644
+      rotation -0.4469680445966859 0.4469680445966859 0.7748800773144385 -1.8231153071795863
+      children [
+        Transform {
+          translation 0 0 0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              geometry Cylinder {
+                height 0.03
+                radius 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "camera_right"
+      antiAliasing TRUE
+    }
+    Camera {
+      translation 0.109025 0 0.0163644
+      rotation -0.4469680445966859 0.4469680445966859 0.7748800773144385 -1.8231153071795863
+      children [
+        Transform {
+          translation 0 0 0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              geometry Cylinder {
+                height 0.03
+                radius 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "camera_mid"
+      antiAliasing TRUE
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.965440123647617
+        axis 0 1 0
+        anchor 0.06 0.07 0
+      }
+      device [
+        RotationalMotor {
+          name "motor2"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation 0.05999999731979172 0.06999994108585202 8.257830480995796e-05
+        rotation -0.9934621614011726 0.11416093172273721 0.0004642545713843227 2.8115454709698594e-07
+        children [
+          DEF WHEEL Shape {
+            appearance PBRAppearance {
+              baseColor 0.5 1 1
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        contactMaterial "ExteriorWheelMat"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.9654396884700476
+        axis 0 1 0
+        anchor -0.06 0.07 0
+      }
+      device [
+        RotationalMotor {
+          name "motor3"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation -0.05999999733551928 0.06999994108606272 8.257830480947213e-05
+        rotation -0.7355740356648998 -0.6774442558968965 -0.0003438138355163734 3.5009801758738595e-07
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.5 1 1
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        contactMaterial "InteriorWheelMat"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.9654396843166984
+        axis 0 1 0
+        anchor 0.06 -0.07 0
+      }
+      device [
+        RotationalMotor {
+          name "motor1"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation 0.059999997379460476 -0.07000007508414972 8.24922814162698e-05
+        rotation 0.5526798117187516 -0.8333935375750561 0.00048707972527744516 4.655271575395269e-07
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.5 1 1
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        contactMaterial "InteriorWheelMat"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.9654401193984037
+        axis 0 1 0
+        anchor -0.06 -0.07 0
+      }
+      device [
+        RotationalMotor {
+          name "motor4"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation -0.05999999739547012 -0.07000007508393781 8.249228141638009e-05
+        rotation 0.7743084627101856 0.6328079795651067 -0.0006823299176495761 3.111453804049063e-07
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.5 1 1
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(3)"
+        contactMaterial "ExteriorWheelMat"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.2 0.1 0.05
+      }
+    }
+  ]
+  boundingObject USE BODY
+  physics Physics {
+    density -1
+    mass 1
+  }
+  controller "<extern>"
+  controllerArgs [
+    "lookaround.py 10 10"
+  ]
+}

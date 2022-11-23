@@ -1,0 +1,322 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  basicTimeStep 20
+  contactProperties [
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [
+        1.8, 0, 0.2
+      ]
+      frictionRotation 0.965 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [
+        1.8, 0, 0.2
+      ]
+      frictionRotation -0.965 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.03495547464892348 -0.3532278288908535 -0.9348840653734144 3.326099946623106
+  position 1.6495877122752887 4.716410551667327 3.5876072611614362
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  translation 1.857080303784352 2.0106331928261905 0.07312499645489742
+  rotation -5.327902403034233e-10 0.0003994685930356951 0.9999999202124185 3.141590000334342
+  scale 1.89583 1.89583 1.89583
+  children [
+    Lidar {
+      translation 2.95625e-09 -2.95622e-09 0.075
+      rotation -0.5773469358518515 -0.5773519358512958 0.5773519358512958 2.0944
+      children [
+        Transform {
+          rotation 1 0 0 1.5708
+          scale 0.5 0.5 0.5
+          children [
+            Shape {
+              appearance BlanketFabric {
+                colorOverride 0.959152 0.581765 0.109468
+                textureTransform TextureTransform {
+                  center 3 0
+                }
+                IBLStrength 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.05
+              }
+            }
+          ]
+        }
+      ]
+      rotationStep 0.161796
+      fieldOfView 3.14
+      verticalFieldOfView 0.1
+      numberOfLayers 1
+      near 0.025
+      minRange 0.05
+      maxRange 5
+      type "rotating"
+      defaultFrequency 25
+      maxFrequency 64
+    }
+    GPS {
+      translation 0 -0.05 0
+      name "gps_right"
+    }
+    GPS {
+      translation 0 0.05 0
+      name "gps_left"
+    }
+    GPS {
+      translation -0.09 0 0
+      name "gps_back"
+    }
+    GPS {
+      translation 0.09 0 0
+      name "gps_front"
+    }
+    GPS {
+      name "gps_mid"
+    }
+    Camera {
+      translation 0.109025 0.0399999 0.0163641
+      rotation -0.4469680445966859 0.4469680445966859 0.7748800773144385 -1.8231153071795863
+      children [
+        Transform {
+          translation 0 0 0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              geometry Cylinder {
+                height 0.03
+                radius 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "camera_left"
+      antiAliasing TRUE
+    }
+    Camera {
+      translation 0.109025 -0.0400001 0.0163644
+      rotation -0.4469680445966859 0.4469680445966859 0.7748800773144385 -1.8231153071795863
+      children [
+        Transform {
+          translation 0 0 0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              geometry Cylinder {
+                height 0.03
+                radius 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "camera_right"
+      antiAliasing TRUE
+    }
+    Camera {
+      translation 0.109025 0 0.0163644
+      rotation -0.4469680445966859 0.4469680445966859 0.7748800773144385 -1.8231153071795863
+      children [
+        Transform {
+          translation 0 0 0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              geometry Cylinder {
+                height 0.03
+                radius 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "camera_mid"
+      antiAliasing TRUE
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.965440123647617
+        axis 0 1 0
+        anchor 0.06 0.07 0
+      }
+      device [
+        RotationalMotor {
+          name "motor2"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation 0.05999999731979172 0.06999994108585202 8.257830480995796e-05
+        rotation -0.9934621614011726 0.11416093172273721 0.0004642545713843227 2.8115454709698594e-07
+        children [
+          DEF WHEEL Shape {
+            appearance PBRAppearance {
+              baseColor 0.5 1 1
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        contactMaterial "ExteriorWheelMat"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.9654396884700476
+        axis 0 1 0
+        anchor -0.06 0.07 0
+      }
+      device [
+        RotationalMotor {
+          name "motor3"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation -0.05999999733551928 0.06999994108606272 8.257830480947213e-05
+        rotation -0.7355740356648998 -0.6774442558968965 -0.0003438138355163734 3.5009801758738595e-07
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.5 1 1
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        contactMaterial "InteriorWheelMat"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.9654396843166984
+        axis 0 1 0
+        anchor 0.06 -0.07 0
+      }
+      device [
+        RotationalMotor {
+          name "motor1"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation 0.059999997379460476 -0.07000007508414972 8.24922814162698e-05
+        rotation 0.5526798116343729 -0.8333935376310136 0.0004870797252030827 4.655271575395269e-07
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.5 1 1
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        contactMaterial "InteriorWheelMat"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.9654401193984037
+        axis 0 1 0
+        anchor -0.06 -0.07 0
+      }
+      device [
+        RotationalMotor {
+          name "motor4"
+          maxVelocity 100
+        }
+      ]
+      endPoint Solid {
+        translation -0.05999999739547012 -0.07000007508393781 8.249228141638009e-05
+        rotation 0.7743084627101856 0.6328079795651067 -0.0006823299176495761 3.111453804049063e-07
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.5 1 1
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(3)"
+        contactMaterial "ExteriorWheelMat"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.2 0.1 0.05
+      }
+    }
+  ]
+  boundingObject USE BODY
+  physics Physics {
+    density -1
+    mass 1
+  }
+  controller "<extern>"
+  controllerArgs [
+    "lookaround.py 10 10"
+  ]
+}
+RectangleArena {
+  rotation 1 0 0 1.57
+  floorSize 5 5
+  wallHeight 0.5
+}
+Wall {
+  translation 0.75 1 0
+  rotation 1.6952594753969508e-09 0.707104781184338 0.7071087811831002 -3.1415853071795863
+  name "wall1"
+  size 3.5 0.5 0.1
+}
+Wall {
+  translation -0.75 -1 0
+  rotation 1 0 0 1.5708
+  name "wall2"
+  size 3.5 0.5 0.1
+}
