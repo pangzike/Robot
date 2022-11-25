@@ -6,7 +6,7 @@ The perception, planning and control algorithms need to be completed to control 
 
 The map is as below:
 
-<img src="/Users/yangke/Documents/GitHub/Robot/image/map.png" alt="map" style="zoom:50%;" />
+<img src="image/map.png" alt="map" style="zoom:50%;" />
 
 > Dynamic scene with two openable doors
 
@@ -18,7 +18,7 @@ The starting point is the upper right corner and the ending point is the lower l
 
 Modeling a Mecanum wheel trolley which can move the whole car forward, horizontally, diagonally, rotationally and in combination. Because this is a simulation environment, so this can be easily realized by modifying the friction direction.
 
-<img src="/Users/yangke/Documents/GitHub/Robot/image/car.png" alt="car" style="zoom:70%;" />
+<img src="image/car.png" alt="car" style="zoom:70%;" />
 
 The car has a lidar to dynamically build maps and 5 gps to get the trolley's position.
 
@@ -58,7 +58,7 @@ Input:
 
 - front_uv (The angle of the central axis, which should be a vector (mid to front))
 
-<img src="/Users/yangke/Documents/GitHub/Robot/image/gps.png" alt="gps" style="zoom:33%;" />
+<img src="image/gps.png" alt="gps" style="zoom:33%;" />
 
 The radar is 512 lines, the test chart is $10 * 10$, and the ratio of the figure and the accuracy value is 60 times, which means that the half sector of $600 * 600$, 512 lines is about 256, which is equivalent to the accuracy of the point close to half (it can also be changed to 1024 if the calculation ability allows).
 
@@ -84,7 +84,7 @@ If the map value is greater than 11, it will be regarded as an obstacle, mainly 
 
 #### Result
 
-<img src="/Users/yangke/Documents/GitHub/Robot/image/result.png" alt="result" style="zoom:80%;" />
+<img src="image/result.png" alt="result" style="zoom:80%;" />
 
 On the left, there is a good example. However, there is also a bad case, which is on the right. This is the map obtained by the trolley rotating at one angle (rotation is easy to cause errors). Therefore, the threshold value of obstacles should not be too large, and the cost of identifying obstacles is too high. Also, it can't be too small. It will regard some mistakes as obstacles
 
@@ -98,7 +98,7 @@ Compared with the original RRT, this algorithm builds a second tree in the targe
 
 Pseudocode:
 
-<img src="/Users/yangke/Documents/GitHub/Robot/image/rrt.png" alt="rrt" style="zoom:50%;" />
+<img src="image/rrt.png" alt="rrt" style="zoom:50%;" />
 
 #### Improve by using RRT*
 
@@ -218,11 +218,11 @@ After the path is segmented, **we only need to discuss how each path car should 
 
 Each small section of path is an obstacle free straight line, so the trolley only needs to keep the line between the front and rear of the car (green line) and the line between the middle of the car and the target point (red line) as close as possible (by moving forward and turning left and right at the same time). At this moment, the turning direction is shown by the black line.
 
-<img src="/Users/yangke/Documents/GitHub/Robot/image/rotate_car.png" alt="rotate_car" style="zoom:30%;" />
+<img src="image/rotate_car.png" alt="rotate_car" style="zoom:30%;" />
 
 Now we have solved the problem of how to turn, how to express the inclination of the two straight lines and how much to turn. The simplest and easiest way to think of is to use two-point slopes. However, it should be noted that the slopes are not evenly distributed on the arc, so I came up with the idea of using Arccos function, the function image is as follows:
 
-<img src="/Users/yangke/Documents/GitHub/Robot/image/arccos.png" alt="arccos" style="zoom:60%;" />
+<img src="image/arccos.png" alt="arccos" style="zoom:60%;" />
 
 However, its value range is only 0 ～ Pi, while a circle has 0 ～ 2Pi, so it is also necessary to mark whether it is the lower half circle or the upper half circle.
 
